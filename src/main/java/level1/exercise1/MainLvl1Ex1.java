@@ -19,7 +19,7 @@ public class MainLvl1Ex1 {
         System.out.println(wordsWithOList);
     }
 
-    public static List<String> wordsWithO(List<String> words) {
+    private static List<String> wordsWithO(List<String> words) {
         return words.stream().filter(word -> word.toLowerCase().contains("o")).collect(Collectors.toList());
     }
 }

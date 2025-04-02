@@ -26,7 +26,7 @@ public class MainLvl1Ex6 {
         sortedAllList.forEach(System.out::println);
     }
 
-    public static List<String> sortedListOnlyStringByLength(List<Object> unsortedList) {
+    private static List<String> sortedListOnlyStringByLength(List<Object> unsortedList) {
         return unsortedList.stream()
                 .filter(element -> element instanceof String)
                 .map(element -> (String) element)
@@ -34,7 +34,7 @@ public class MainLvl1Ex6 {
                 .collect(Collectors.toList());
     }
 
-    public static List<String> sortedAllListByLength(List<Object> unsortedList) {
+    private static List<String> sortedAllListByLength(List<Object> unsortedList) {
         return unsortedList.stream()
                 .map(String::valueOf)
                 .sorted(Comparator.comparingInt(String::length))
