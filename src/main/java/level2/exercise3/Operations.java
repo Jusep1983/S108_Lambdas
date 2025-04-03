@@ -4,6 +4,4 @@ package level2.exercise3;
 interface Operations {
 
    float operation(float a , float b);
-
-
 }
