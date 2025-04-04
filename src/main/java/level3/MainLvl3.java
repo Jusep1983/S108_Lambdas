@@ -40,6 +40,7 @@ public class MainLvl3 {
 
         System.out.println("\nList of Java students of legal age: ");
         listManagement.javaStudentsOfLegalAge(students).forEach(System.out::println);
+
     }
 
 }
