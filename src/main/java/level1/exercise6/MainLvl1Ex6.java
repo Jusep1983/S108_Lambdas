@@ -29,7 +29,7 @@ public class MainLvl1Ex6 {
     private static List<String> sortedListOnlyStringByLength(List<Object> unsortedList) {
         return unsortedList.stream()
                 .filter(element -> element instanceof String)
-                .map(element -> (String) element)
+                .map(String::valueOf)
                 .sorted(Comparator.comparingInt(String::length))
                 .collect(Collectors.toList());
     }

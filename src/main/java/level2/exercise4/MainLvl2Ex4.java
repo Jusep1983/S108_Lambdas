@@ -18,31 +18,31 @@ public class MainLvl2Ex4 {
         System.out.println("\nLista ordenada alfabéticamente si contiene \"e\" primero: ");
         sortListWithEFirst(unsortedList).forEach(System.out::println);
         System.out.println("\nLista ordenada alfabéticamente si contiene \"e\" primero y cambiando \"a\" por \"4\": ");
-        sortListreplaceAFor4(unsortedList).forEach(System.out::println);
+        sortListReplaceAFor4(unsortedList).forEach(System.out::println);
     }
 
 
     private static List<String> sortListAlphabetically(List<Object> unsortedList) {
         return unsortedList.stream()
                 .map(Object::toString)
-                .sorted(Comparator.comparing(s -> s.charAt(0)))
+                .sorted(String::compareTo)
                 .collect(Collectors.toList());
     }
 
     private static List<String> sortListWithEFirst(List<Object> unsortedList) {
         return unsortedList.stream()
                 .map(Object::toString)
-                .sorted(Comparator.comparing(s -> s.charAt(0)))
-                .sorted(Comparator.comparing((String s) -> !s.contains("e")))
+                .sorted(Comparator.comparing((String element) -> !element.contains("e"))
+                        .thenComparing(String::compareTo))
                 .collect(Collectors.toList());
     }
 
-    private static List<String> sortListreplaceAFor4(List<Object> unsortedList) {
+    private static List<String> sortListReplaceAFor4(List<Object> unsortedList) {
         return unsortedList.stream()
                 .map(Object::toString)
-                .map(s -> s.replace("a", "4"))
-                .sorted(Comparator.comparing(s -> s.charAt(0)))
-                .sorted(Comparator.comparing((String s) -> !s.contains("e")))
+                .map(s -> s.replaceAll("a", "4"))
+                .sorted(Comparator.comparing((String element) -> !element.contains("e"))
+                        .thenComparing(String::compareTo))
                 .collect(Collectors.toList());
     }
 }
