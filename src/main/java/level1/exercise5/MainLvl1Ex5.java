@@ -10,5 +10,4 @@ public class MainLvl1Ex5 {
         System.out.println("The value of the number pi is " + result);
     }
 
-
 }

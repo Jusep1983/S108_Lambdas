@@ -7,7 +7,8 @@ import java.util.stream.Collectors;
 
 public class MainLvl1Ex1 {
     public static void main(String[] args) {
-        ArrayList<String> words = new ArrayList<>(Arrays.asList("Car", "Sunset", "Toy", "Ball", "Bottle", "OOOOh!"));
+
+     List<String> words = new ArrayList<>(Arrays.asList("Car", "Sunset", "Toy", "Ball", "Bottle", "OOOOh!"));
 
         List<String> wordsWithOList = wordsWithO(words);
         System.out.println(wordsWithOList);

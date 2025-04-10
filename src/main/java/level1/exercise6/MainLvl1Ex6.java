@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class MainLvl1Ex6 {
     public static void main(String[] args) {
         List<Object> unsortedList = new ArrayList<>(Arrays.asList(
-                99, "HolaHola", "Hace un bonito dia", 9, "1983", "*", 99999)
+                99, "HolaHola", "Hace un bonito dia", 9, "1983", '*', 99999)
         );
         List<Object> sortedList = new ArrayList<>(sortedListOnlyStringByLength(unsortedList));
         List<Object> sortedAllList = new ArrayList<>(sortedAllListByLength(unsortedList));
@@ -29,7 +29,7 @@ public class MainLvl1Ex6 {
     private static List<String> sortedListOnlyStringByLength(List<Object> unsortedList) {
         return unsortedList.stream()
                 .filter(element -> element instanceof String)
-                .map(String::valueOf)
+                .map(element -> (String) element)//mirarlo
                 .sorted(Comparator.comparingInt(String::length))
                 .collect(Collectors.toList());
     }

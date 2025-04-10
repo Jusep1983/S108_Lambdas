@@ -19,27 +19,23 @@ public class MainLvl3 {
                 new Student("Judy", 29, "PHP", 3.5)
         ));
 
-        List<Student> studentsWithA = new ArrayList<>();
-
-        ListManagement listManagement = new ListManagement();
-
         String namesAndAges = students.stream()
                 .map(student -> student.getName() + " " + student.getAge())
                 .collect(Collectors.joining(", ", "", ". "));
         System.out.println("List of students and ages:\n" + namesAndAges);
 
-        studentsWithA = listManagement.getOnlyStudentsWithAFirst(students);
+        List<Student> studentsWithA = ListManagement.getOnlyStudentsWithAFirst(students);
         System.out.println("\nList of students whose name begins with 'A': ");
         studentsWithA.forEach(System.out::println);
 
         System.out.println("\nList of approved students: ");
-        listManagement.getApprovedStudents(students).forEach(System.out::println);
+        ListManagement.getApprovedStudents(students).forEach(System.out::println);
 
         System.out.println("\nList of approved java students: ");
-        listManagement.getApprovedStudentsJava(students).forEach(System.out::println);
+        ListManagement.getApprovedStudentsJava(students).forEach(System.out::println);
 
         System.out.println("\nList of Java students of legal age: ");
-        listManagement.javaStudentsOfLegalAge(students).forEach(System.out::println);
+        ListManagement.javaStudentsOfLegalAge(students).forEach(System.out::println);
 
     }
 
